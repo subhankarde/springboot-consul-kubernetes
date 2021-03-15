@@ -7,8 +7,8 @@ spec:
     app: supermanservice
   ports:
     - protocol: TCP
-      port: 8080
-      nodePort: 30083
+      port: 80
+      targetPort: 8080
   type: LoadBalancer
 ---
 apiVersion: apps/v1
@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: supermanservice
-          image: subhankarde/supermanservice:0.0.5-SNAPSHOT
+          image: subhankarde/supermanservice:0.1.0-SNAPSHOT
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

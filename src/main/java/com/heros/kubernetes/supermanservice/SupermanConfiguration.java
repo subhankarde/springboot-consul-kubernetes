@@ -3,17 +3,16 @@ package com.heros.kubernetes.supermanservice;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-@ConfigurationProperties(prefix = "supermanservice")
-@Configuration
+@ConfigurationProperties(prefix = "message")
 public class SupermanConfiguration {
 
-    private String message = "I am the saviour of the Earth";
+    private String greetings;
 
-    public String getMessage() {
-        return message;
+    public String getGreetings() {
+        return greetings;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setGreetings(String greetings) {
+        this.greetings = greetings;
     }
 }

@@ -1,8 +1,9 @@
 spring:
   cloud:
-    kubernetes:
+    consul:
       config:
-        enabled: true
-        sources:
-          - namespace: default
-            name: supermanservice
+        fail-fast: true
+      host: 10.56.14.250
+      port: 80
+  application:
+    name: supermanservice
