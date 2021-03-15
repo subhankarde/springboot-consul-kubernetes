@@ -7,3 +7,25 @@
 ```
 helm repo add hashicorp https://helm.releases.hashicorp.com
 ```
+- Create the configuration to override Helm Chart's default
+```
+# helm-consul-values.yaml
+global:
+  datacenter: myconsulcluster
+
+ui:
+  service:
+    type: 'LoadBalancer'
+
+```
+- Using Helm 3x install Consul in GKE
+```
+helm install -f helm-consul-values.yaml hashicorp hashicorp/consul
+```
+- Once the deployment is completed get the External IP using kubectl and access the Consul UI
+- Navigate Consul Key/Value
+- Create a Key/Value used by the application, the parent folder should be Config and then the <Service Name>
+```
+  http://34.121.213.232/ui/myconsulcluster/kv/config/supermanservice/message.greetings/edit
+```
+![image](https://user-images.githubusercontent.com/14083152/111208456-20b69e80-85a1-11eb-91f2-65b4cff2df89.png)
