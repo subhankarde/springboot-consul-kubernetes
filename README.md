@@ -56,6 +56,11 @@ mvn clean install -D maven.test.skip=true
 ```
 docker push subhankarde/supermanservice:<tag name>
 ```
+- Update the deployment.yaml with image name and Consul IP.
+- Deploy the app in the cluster
+```
+kubectl apply -f deployment.yaml
+```
 - Tear down
 ```
 gcloud container clusters resize <cluster-name> --num-nodes=0 --zone us-central1-c
