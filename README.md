@@ -40,3 +40,7 @@ helm install -f helm-consul-values.yaml hashicorp hashicorp/consul
 ![image](https://user-images.githubusercontent.com/14083152/111208456-20b69e80-85a1-11eb-91f2-65b4cff2df89.png)
 
 - Create a Spring Boot app using the above project. Before deploying check the internal Consul Service IP and replace it bootstrap.yaml 
+- Tear down
+```
+gcloud container clusters resize <cluster-name> --num-nodes=0 --zone us-central1-c
+```
