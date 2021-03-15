@@ -11,7 +11,7 @@
 
 ### Steps to configure Consul on GKE
 
-- Create the GKE 3 node cluster using Console or CLI
+- Create a GKE 3 node cluster using Console or CLI
 - Add the HashiCorp Helm Chart repository using Cloud Shell
 ```
 helm repo add hashicorp https://helm.releases.hashicorp.com
