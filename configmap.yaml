@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: supermanservice
-data:
-  application.properties: |-
-    message=Hi, this is Spiderman calling
