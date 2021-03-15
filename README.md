@@ -48,6 +48,14 @@ spring:
       host: <GKE Extenal/Internal IP>
       port: 80
 ```      
+- Using maven build your app. We are using spotify to generate the Docker image. You can also use [Jib](https://cloud.google.com/blog/products/application-development/introducing-jib-build-java-docker-images-better) Maven plugin.
+```
+mvn clean install -D maven.test.skip=true 
+```
+- Once the Docker container is built, push it your own repository. The tag name is generated from the POM file
+```
+docker push subhankarde/supermanservice:<tag name>
+```
 - Tear down
 ```
 gcloud container clusters resize <cluster-name> --num-nodes=0 --zone us-central1-c
