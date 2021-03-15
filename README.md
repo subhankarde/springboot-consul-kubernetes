@@ -39,7 +39,15 @@ helm install -f helm-consul-values.yaml hashicorp hashicorp/consul
 ```
 ![image](https://user-images.githubusercontent.com/14083152/111208456-20b69e80-85a1-11eb-91f2-65b4cff2df89.png)
 
-- Create a Spring Boot app using the above project. Before deploying check the internal Consul Service IP and replace it bootstrap.yaml 
+- Create a Spring Boot app using the above project. Before deploying check the internal Consul Service IP and replace it bootstrap.yaml
+- By default, Spring Boot will try to connect to the Consul agent at localhost:8500. To use other settings, we need to update the application.yml/bootstrap.yaml file:
+```
+spring:
+  cloud:
+    consul:
+      host: <GKE Extenal/Internal IP>
+      port: 80
+```      
 - Tear down
 ```
 gcloud container clusters resize <cluster-name> --num-nodes=0 --zone us-central1-c
