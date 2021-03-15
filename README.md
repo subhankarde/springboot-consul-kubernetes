@@ -1,4 +1,13 @@
-# Spring Boot deployed Google Kubernetes Engine(GKE)  using Hashicorp Consul for properties
+# Spring Boot deployed Google Kubernetes Engine(GKE)  using Hashicorp Consul for properties.
+
+### Motivation
+- Consul is a better tool for managing application properties rather using ConfigMaps.
+
+### Prerequisites
+- Maven
+- Docker
+- Spring Boot
+- Kubernetes(GKE)
 
 ### Steps to configure Consul on GKE
 
